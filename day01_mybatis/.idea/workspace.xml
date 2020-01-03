@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25ae827e-f405-4e45-a339-63407468ef07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/d:axis.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eesy_mybatis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/annotations/Select.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/cfg/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/cfg/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/io/Resources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSessionFactoryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/proxy/MapperProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/DataSourceUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/Executor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/XMLConfigBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/itheima/dao/IUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/eesy_mybatis.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/dao/IUserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/dao/IUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/domain/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/annotations/Select.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/cfg/Configuration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/cfg/Mapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/io/Resources.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSessionFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSessionFactoryBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSessionFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/proxy/MapperProxy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/DataSourceUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/Executor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/XMLConfigBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ithemas/Dao/IUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/META-INF/eesy_mybatis.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/itheima/test/MybatisTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="james" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Vmtfa3d0wy5ugcthAMYut97oKL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/ithemas/Dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/ithemas/domain" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MybatisTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.MybatisTest" />
+      <module name="eesy_mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ithemas.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25ae827e-f405-4e45-a339-63407468ef07" name="Default Changelist" comment="" />
+      <created>1577870201242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577870201242</updated>
+      <workItem from="1577870210064" duration="599000" />
+      <workItem from="1577881675437" duration="7498000" />
+      <workItem from="1577945716980" duration="17408000" />
+      <workItem from="1578020957880" duration="2548000" />
+      <workItem from="1578035328537" duration="598000" />
+      <workItem from="1578041243002" duration="1785000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="day01,mybatis自定义代理的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="day01,mybatis自定义代理的实现" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="556" y="25" width="800" height="673" key="#Project_Structure" timestamp="1577883970734">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="556" y="25" width="800" height="673" key="#Project_Structure/0.25.1366.743@0.25.1366.743" timestamp="1577883970734" />
+    <state x="278" y="58" width="902" height="673" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578021373270">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="278" y="58" width="902" height="673" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.743@0.25.1366.743" timestamp="1578021373270" />
+    <state x="812" y="94" width="554" height="628" key="#com.intellij.ide.util.MemberChooser" timestamp="1578016666234">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="812" y="94" width="554" height="628" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1578016666234" />
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2" timestamp="1578046852498">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2/0.25.1366.743@0.25.1366.743" timestamp="1578046852498" />
+    <state x="100" y="125" width="1166" height="543" key="DiffContextDialog" timestamp="1577887372920">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="100" y="125" width="1166" height="543" key="DiffContextDialog/0.25.1366.743@0.25.1366.743" timestamp="1577887372920" />
+    <state x="426" y="137" width="504" height="514" key="FileChooserDialogImpl" timestamp="1578046663504">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="426" y="137" width="504" height="514" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1578046663504" />
+    <state width="1312" height="68" key="GridCell.Tab.0.bottom" timestamp="1578030355658">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state width="1312" height="68" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1578030355658" />
+    <state width="1312" height="68" key="GridCell.Tab.0.center" timestamp="1578030355657">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state width="1312" height="68" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1578030355657" />
+    <state width="1312" height="68" key="GridCell.Tab.0.left" timestamp="1578030355657">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state width="1312" height="68" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1578030355657" />
+    <state width="1312" height="68" key="GridCell.Tab.0.right" timestamp="1578030355658">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state width="1312" height="68" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1578030355658" />
+    <state x="432" y="84" width="924" height="680" key="Maven.ArtifactSearchDialog" timestamp="1577956730075">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="432" y="84" width="924" height="680" key="Maven.ArtifactSearchDialog/0.25.1366.743@0.25.1366.743" timestamp="1577956730075" />
+    <state x="306" y="128" width="455" height="441" key="chooseDestDirectoryDialog" timestamp="1577955707344">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="306" y="128" width="455" height="441" key="chooseDestDirectoryDialog/0.25.1366.743@0.25.1366.743" timestamp="1577955707344" />
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1577887372921">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.25.1366.743@0.25.1366.743" timestamp="1577887372921" />
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577887356379">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.1366.743@0.25.1366.743" timestamp="1577887356379" />
+    <state x="0" y="423" key="com.intellij.ide.util.TipDialog" timestamp="1578041245458">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="0" y="423" key="com.intellij.ide.util.TipDialog/0.25.1366.743@0.25.1366.743" timestamp="1578041245458" />
+    <state x="0" y="91" width="1356" height="607" key="new project wizard" timestamp="1578014017512">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="0" y="91" width="1356" height="607" key="new project wizard/0.25.1366.743@0.25.1366.743" timestamp="1578014017512" />
+    <state x="1107" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578021434610">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="1107" y="89" width="672" height="678" key="search.everywhere.popup/0.25.1366.743@0.25.1366.743" timestamp="1578021434610" />
+  </component>
+</project>

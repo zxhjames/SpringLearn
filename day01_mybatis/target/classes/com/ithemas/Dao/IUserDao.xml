@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.ithemas.Dao.IUserDao">
+    <!--配置查询所有-->
+    <!--这个Id不能乱写,要写方法里面的函数-->
+    <select id="findAll" resultType="com.ithemas.domain.User">
+        select * from user
+    </select>
+</mapper>
