@@ -2,56 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25ae827e-f405-4e45-a339-63407468ef07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/d:axis.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eesy_mybatis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/dao/IUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/annotations/Select.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/cfg/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/cfg/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/io/Resources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/SqlSessionFactoryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/sqlsession/proxy/MapperProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/DataSourceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/Executor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/mybatis/utils/XMLConfigBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/itheima/dao/IUserDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/eesy_mybatis.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/SqlMapConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/dao/IUserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/dao/IUserDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/domain/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/annotations/Select.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/cfg/Configuration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/cfg/Mapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/io/Resources.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSession.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSessionFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/SqlSessionFactoryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSession.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/defaults/DefaultSqlSessionFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/sqlsession/proxy/MapperProxy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/DataSourceUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/Executor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/itheima/mybatis/utils/XMLConfigBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ithemas/Dao/IUserDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/META-INF/eesy_mybatis.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/itheima/test/MybatisTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +38,13 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -166,8 +124,16 @@
       <workItem from="1577945716980" duration="17408000" />
       <workItem from="1578020957880" duration="2548000" />
       <workItem from="1578035328537" duration="598000" />
-      <workItem from="1578041243002" duration="1785000" />
+      <workItem from="1578041243002" duration="2612000" />
     </task>
+    <task id="LOCAL-00001" summary="day01,mybatis自定义代理的实现">
+      <created>1578046998164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578046998164</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +144,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="day01,mybatis自定义代理的实现" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="278" y="58" width="800" height="673" key="#Notifications" timestamp="1578047096250">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="278" y="58" width="800" height="673" key="#Notifications/0.25.1366.743@0.25.1366.743" timestamp="1578047096250" />
     <state x="556" y="25" width="800" height="673" key="#Project_Structure" timestamp="1577883970734">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
@@ -190,10 +160,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="812" y="94" width="554" height="628" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1578016666234" />
-    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2" timestamp="1578046852498">
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2" timestamp="1578049017657">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2/0.25.1366.743@0.25.1366.743" timestamp="1578046852498" />
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2/0.25.1366.743@0.25.1366.743" timestamp="1578049017657" />
     <state x="100" y="125" width="1166" height="543" key="DiffContextDialog" timestamp="1577887372920">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
@@ -222,6 +192,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="432" y="84" width="924" height="680" key="Maven.ArtifactSearchDialog/0.25.1366.743@0.25.1366.743" timestamp="1577956730075" />
+    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2" timestamp="1578047061397">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2/0.25.1366.743@0.25.1366.743" timestamp="1578047061397" />
     <state x="306" y="128" width="455" height="441" key="chooseDestDirectoryDialog" timestamp="1577955707344">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
