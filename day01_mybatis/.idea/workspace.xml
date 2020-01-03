@@ -124,7 +124,7 @@
       <workItem from="1577945716980" duration="17408000" />
       <workItem from="1578020957880" duration="2548000" />
       <workItem from="1578035328537" duration="598000" />
-      <workItem from="1578041243002" duration="2612000" />
+      <workItem from="1578041243002" duration="2879000" />
     </task>
     <task id="LOCAL-00001" summary="day01,mybatis自定义代理的实现">
       <created>1578046998164</created>
@@ -133,7 +133,28 @@
       <option name="project" value="LOCAL" />
       <updated>1578046998164</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="day01,mybatis自定义代理的实现">
+      <created>1578049035119</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578049035119</updated>
+    </task>
+    <task id="LOCAL-00003" summary="day01,mybatis自定义代理的实现">
+      <created>1578049081375</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578049081376</updated>
+    </task>
+    <task id="LOCAL-00004" summary="day01,mybatis自定义代理的实现">
+      <created>1578049100294</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578049100294</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,10 +181,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="812" y="94" width="554" height="628" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1578016666234" />
-    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2" timestamp="1578049081292">
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2" timestamp="1578049100176">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2/0.25.1366.743@0.25.1366.743" timestamp="1578049081292" />
+    <state x="244" y="25" width="867" height="739" key="CommitChangelistDialog2/0.25.1366.743@0.25.1366.743" timestamp="1578049100176" />
     <state x="100" y="125" width="1166" height="543" key="DiffContextDialog" timestamp="1577887372920">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
@@ -192,10 +213,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="432" y="84" width="924" height="680" key="Maven.ArtifactSearchDialog/0.25.1366.743@0.25.1366.743" timestamp="1577956730075" />
-    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2" timestamp="1578049047504">
+    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2" timestamp="1578049212845">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2/0.25.1366.743@0.25.1366.743" timestamp="1578049047504" />
+    <state x="278" y="117" width="800" height="555" key="Vcs.Push.Dialog.v2/0.25.1366.743@0.25.1366.743" timestamp="1578049212845" />
     <state x="306" y="128" width="455" height="441" key="chooseDestDirectoryDialog" timestamp="1577955707344">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
