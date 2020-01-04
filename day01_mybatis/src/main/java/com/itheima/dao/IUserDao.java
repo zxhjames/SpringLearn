@@ -1,7 +1,6 @@
 package com.itheima.dao;
 
 import com.itheima.domain.User;
-import com.itheima.mybatis.annotations.Select;
 
 import java.util.List;
 
@@ -17,6 +16,22 @@ public interface IUserDao {
      * 查询所有操作
      * @return
      */
-    @Select("select * from user")
     List<User> findAll();
+
+
+    /**
+     * 插入一个用户，并保存用户
+     * @param user
+     */
+    void saveUser(User user);
+
+    /**
+     * 删除一个用户的操作
+     */
+    void deleteUser(Integer id);
+
+    /**
+     * 更新操作
+     */
+    void updateUser(User user);
 }
