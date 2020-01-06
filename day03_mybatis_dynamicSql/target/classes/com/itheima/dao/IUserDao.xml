@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.IUserDao">
+
+    <!--配置查询结果的列名和实体类的属性名想联系-->
+    <resultMap id="userMap" type="user">
+        <!--主键字段的对应-->
+    </resultMap>
+
+
+
+    <!--配置查询所有-->
+
+    <!--resultType返回查询的所有-->
+    <select id="findAll" resultType="user">
+        select * from user;
+    </select>
+
+
+    <select id="getUserById" resultType="user">
+        select * from user  where  id = #{id};
+    </select>
+
+    <select id="getUserByusername" resultType="user" parameterType="String">
+        select * from user where username = #{username};
+    </select>
+
+    <!--根据QueryVo的条件查询用户-->
+    <select id="findUserByVo" parameterType="com.itheima.domain.QueryVo"
+    resultMap="userMap">
+        select * from user where username like #{user.username};
+    </select>
+
+    <!--根据条件查询-->
+    <select id="findUserByCondition" resultType="user" parameterType="user">
+        select * from user where
+        <if test="username!=null">
+            username = #{username}
+        </if>
+    </select>
+
+</mapper>
