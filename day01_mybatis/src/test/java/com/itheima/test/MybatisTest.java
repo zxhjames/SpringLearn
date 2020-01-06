@@ -1,6 +1,8 @@
 package com.itheima.test;
 
 import com.itheima.dao.IUserDao;
+import com.itheima.dao.impl.UserDaoImpl;
+import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -35,17 +37,25 @@ public class MybatisTest {
         //3.获取SqlSession对象
         sqlSession = factory.openSession();
         //4.获取dao的代理对象
-        userDao = sqlSession.getMapper(IUserDao.class);
+
+        //1第一种方法
+//        userDao = sqlSession.getMapper(IUserDao.class);
+        userDao = new UserDaoImpl(factory);
     }
 
     @After//用于在测试方法执行之后执行
     public void destroy() throws Exception {
-        //提交事务
-        sqlSession.commit();
-        //6.释放资源
-        sqlSession.close();
+//        //提交事务
+//        sqlSession.commit();
+//        //6.释放资源
+//        sqlSession.close();
         in.close();
     }
+
+
+    /***
+     * 基本的crud操作
+     */
 
     /**
      * 测试查询所有
@@ -66,15 +76,11 @@ public class MybatisTest {
     @Test
     public void testSave() {
         User user = new User();
-        user.setUsername("modify User property");
+        user.setUsername("吴恩达");
         user.setAddress("北京市顺义区");
         user.setSex("m");
         user.setBirthday(new Date());
-        System.out.println("保存操作之前：" + user);
-        //5.执行保存方法
         userDao.saveUser(user);
-
-        System.out.println("保存操作之后：" + user);
     }
 
     /**
@@ -82,7 +88,7 @@ public class MybatisTest {
      */
     @Test
     public void testDelete(){
-        userDao.deleteUser(1);
+        userDao.deleteUser(2);
     }
 
     /**
@@ -93,10 +99,57 @@ public class MybatisTest {
         //可能是数据库已有的对象，也可能是数据库中查找得到的对象
         User user = new User();
         user.setId(2);
-        user.setUsername("koby");
+        user.setUsername("james");
         user.setAddress("洛杉矶");
         user.setSex("男");
         user.setBirthday(new Date());
         userDao.updateUser(user);
+    }
+
+    /***
+     * 根据用户的编号返回一个用户信息
+     */
+    @Test
+    public void testgetUserById(){
+        Integer id = 4;
+        User user = userDao.getUserById(id);
+        if(user!=null){
+            System.out.println(user.toString());
+        }
+    }
+
+    /**
+     * 模糊查询
+     */
+    @Test
+    public void testgetUserByuname(){
+        List<User> user = userDao.getUserByusername("%o%");
+        for (User u : user){
+            System.out.println(u.toString());
+        }
+    }
+
+    /**
+     * 返回记录条数
+     */
+    @Test
+    public void getUserNum(){
+        Integer n = userDao.getUserNum();
+        System.out.println(n+"条记录");
+    }
+
+    @Test
+    //测试使用QueryVo作为查询条件
+    public void testFindByVo(){
+        //由多个对象完成数据的查询
+        //例如select * from where para1 = ... and para2 = ..."
+        QueryVo vo = new QueryVo();
+        User user = new User();
+        user.setUsername("%o%");
+        vo.setUser(user);
+        List<User> users = userDao.findUserByVo(vo);
+        for(User u : users){
+            System.out.println(u);
+        }
     }
 }
