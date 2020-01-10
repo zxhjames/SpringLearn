@@ -10,12 +10,16 @@
     </resultMap>
 
 
-
+    <!--抽取重复的sql语句-->
+    <sql id="defaultUser">
+        select * from user;
+    </sql>
+    
     <!--配置查询所有-->
-
     <!--resultType返回查询的所有-->
     <select id="findAll" resultType="user">
-        select * from user;
+        <include refid="defaultUser"></include>
+        <!--select * from user;-->
     </select>
 
 
@@ -35,10 +39,28 @@
 
     <!--根据条件查询-->
     <select id="findUserByCondition" resultType="user" parameterType="user">
-        select * from user where
-        <if test="username!=null">
-            username = #{username}
-        </if>
+        select * from user
+        <where>
+            <if test="username!=null">
+                username = #{username}
+            </if>
+            <if test="sex!=null">
+                and sex = #{sex}
+            </if>
+        </where>
+
     </select>
 
+
+    <!--根据queryvo中id集合实现查询用户列表-->
+    <select id="findUserInIds" resultMap="userMap" parameterType="com.itheima.domain.QueryVo">
+        select * from user
+        <where>
+            <if test="ids!=null and ids.size()>0">
+                <foreach collection="ids" open="and id in (" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

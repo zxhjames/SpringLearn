@@ -1,7 +1,9 @@
 package com.itheima.test;
 
+import com.itheima.dao.IAccount;
 import com.itheima.dao.IUserDao;
-import com.itheima.domain.QueryVo;
+import com.itheima.domain.Account;
+import com.itheima.domain.AccountUser;
 import com.itheima.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,7 +14,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public class MybatisTest {
     private InputStream in;
     private SqlSession sqlSession;
     private IUserDao userDao;
+    private IAccount accountDao;
 
     @Before//用于在测试方法执行之前执行
     public void init() throws Exception {
@@ -40,6 +42,7 @@ public class MybatisTest {
         //1第一种方法
         userDao = sqlSession.getMapper(IUserDao.class);
 //        userDao = new UserDaoImpl(factory);
+        accountDao = sqlSession.getMapper(IAccount.class);
     }
 
     @After//用于在测试方法执行之后执行
@@ -77,59 +80,25 @@ public class MybatisTest {
         }
     }
 
+
     /**
-     * 模糊查询
+     * 查询所有的账单
      */
     @Test
-    public void testgetUserByuname(){
-        List<User> user = userDao.getUserByusername("吴恩达");
-        for (User u : user){
-            System.out.println(u.toString());
-        }
-    }
-
-    @Test
-    //测试使用QueryVo作为查询条件
-    public void testFindByVo(){
-        //由多个对象完成数据的查询
-        //例如select * from where para1 = ... and para2 = ..."
-        QueryVo vo = new QueryVo();
-        User user = new User();
-        user.setUsername("%王%");
-        vo.setUser(user);
-        List<User> users = userDao.findUserByVo(vo);
-        for(User u : users){
-            System.out.println(u);
+    public void testfindAll(){
+        List<AccountUser> list = accountDao.findAll();
+        for(AccountUser ac : list){
+            System.out.println(ac.toString());
         }
     }
 
 
     @Test
-    public void testFindByCondition(){
-        User u = new User();
-        u.setUsername("老王");
-        u.setSex("男");
-        List<User> users = userDao.findUserByCondition(u);
-        for(User user : users){
-            System.out.println(user);
-        }
-    }
-
-
-    //查询多个指定id的数据
-    @Test
-    public void testfindByIds(){
-        QueryVo vo = new QueryVo();
-        User u = new User();
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(8);
-        list.add(7);
-        list.add(4);
-        vo.setIds(list);
-
-        List<User> l = userDao.findUserInIds(vo);
-        for(User user : l){
-            System.out.println(user);
+    public void testfindAllAccount(){
+        List<Account> accounts = accountDao.findAllAccount();
+        for(Account au : accounts){
+            System.out.println(au);
+            System.out.println(au.getUser());
         }
     }
 
