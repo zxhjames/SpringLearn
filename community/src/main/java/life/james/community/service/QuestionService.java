@@ -21,6 +21,7 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
+    //用于主页显示所有问题分页
     public PaginationDTO list(Integer page, Integer size) {
         Integer offset = size * (page - 1);
         List<Question> questions = questionMapper.list(offset, size);
@@ -41,7 +42,7 @@ public class QuestionService {
         paginationDTO.setPagination(totalCount, page, size);
         return paginationDTO;
     }
-
+    //用于分页显示我的所有问题
     public PaginationDTO listByUserId(Integer userid, Integer page, Integer size) {
         Integer offset = size * (page - 1);
         List<Question> questions = questionMapper.listByUserId(userid,offset, size);
@@ -62,4 +63,28 @@ public class QuestionService {
         paginationDTO.setPagination(totalCount, page, size);
         return paginationDTO;
     }
+
+    //用于根据
+    public QuestionDTO getById(Integer id) {
+        Question question = questionMapper.getById(id);
+        QuestionDTO questionDTO = new QuestionDTO();
+        BeanUtils.copyProperties(question,questionDTO);
+        User user = userMapper.findById(question.getCreator());
+        questionDTO.setUser(user);
+        return questionDTO;
+    }
+
+    public void CreateOrUpdate(Question question) {
+        if(question.getId()==null){
+            //创建
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.create(question);
+        }else{
+            //更新
+            question.setGmtModified(System.currentTimeMillis());
+            questionMapper.update(question);
+        }
+    }
+
 }

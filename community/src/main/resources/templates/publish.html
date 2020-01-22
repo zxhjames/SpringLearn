@@ -5,13 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--引入bootstrape样式文件-->
     <!--注意引入的顺序-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/community.css" type="text/css"/>
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:include="header :: header"></div>
@@ -21,6 +19,7 @@
             <h4><span class="glyphicon glyphicon-plus" aria-hidden="true">发起</span></h4>
             <hr>
             <form action="/publish" method="post">
+                <input type="hidden" name="id" th:value="${id}"/>
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
                     <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="问题标题">

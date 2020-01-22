@@ -5,15 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--引入bootstrape样式文件-->
     <!--注意引入的顺序-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="css/community.css"/>
-    <script src="js/jquery-3.4.1.js" type="application/javascript"></script>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/community.css" type="text/css"/>
+    <script src="/js/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -32,7 +28,10 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading" th:text="${question.getTitle()}"></h4>
+                    <h4 class="media-heading">
+                        <!--改成以?号为访问参数就好了-->
+                        <a th:href="@{/question(id=${question.id})}" th:text="${question.title}"></a>
+                    </h4>
                     <span th:text="${question.getTag()}"></span><br>
                     <span class="text-desc"><span th:text="${question.commentCount}"></span> 个评论 • <span
                             th:text="${question.viewCount}"></span> 次浏览 • <span
@@ -51,7 +50,7 @@
                     </li>
 
                     <li th:each="page:${pagination.pages}" th:class="${pagination.page==page}?'active':''">
-                        <a href="/" th:href="@{/(page=${page})}" th:text="${page}">
+                        <a  th:href="@{/(page=${page})}" th:text="${page}">
                         </a></li>
 
                     <li th:if="${pagination.showNext}">

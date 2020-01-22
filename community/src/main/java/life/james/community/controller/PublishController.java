@@ -1,38 +1,60 @@
 package life.james.community.controller;
-
+import life.james.community.dto.QuestionDTO;
 import life.james.community.mapper.QuestionMapper;
 import life.james.community.mapper.UserMapper;
 import life.james.community.model.Question;
 import life.james.community.model.User;
+import life.james.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class PublicController {
+public class PublishController {
     @Autowired
     private QuestionMapper questionMapper;//自动注入
 
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private QuestionService questionService;
+
+    //编辑一个问题,重新跳转回publish页面
+    @GetMapping("/publish/{id}")
+    public String EditPublish(@PathVariable(name = "id") Integer id
+    , Model model){
+        QuestionDTO question=questionService.getById(id);
+        model.addAttribute("title", question.getTitle());
+        model.addAttribute("description", question.getDescription());
+        model.addAttribute("tag", question.getTag());
+        model.addAttribute("id",question.getId());
+        return "publish";
+    }
+
+
+
     @GetMapping("/publish")
     public String publish() {
         return "publish";
     }
 
-    //接受参数
+
+
+
+    //接受参数,发布一个新的问题
     @PostMapping("/publish")
     public String doPublish(
             //传入publish页面发送过来的值
             @RequestParam("title") String title,
             @RequestParam("description") String description,
             @RequestParam("tag") String tag,
+            @RequestParam("id") Integer id,
             HttpServletRequest request,
             Model model) {
         //存放如model中,用于回显到页面上
@@ -61,9 +83,11 @@ public class PublicController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
-        question.setGmtCreate(System.currentTimeMillis());
-        question.setGmtModified(question.getGmtCreate());
-        questionMapper.create(question);
+
+        question.setId(id);//新增加的
+//        questionMapper.create(question);
+        questionService.CreateOrUpdate(question);//重新更新或者是创建问题
         return "redirect:/";
+
     }
 }

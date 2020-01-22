@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--引入bootstrape样式文件-->
+    <!--注意引入的顺序-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/community.css" type="text/css"/>
+    <script src="/js/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
 
+</head>
 <body>
 <!--将标题栏设为模板页面-->
 <div th:fragment="header">
@@ -30,7 +40,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/questions">我的问题</a></li>
                         <li><a href="/person">个人资料</a></li>
-                        <li><a href="#">退出登录</a></li>
+                        <li><a href="/logout">退出登录</a></li>
                     </ul>
                 </li>
                 <li th:if="${session.user==null}">

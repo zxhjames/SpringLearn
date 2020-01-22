@@ -5,6 +5,7 @@ import life.james.community.dto.GithubUser;
 import life.james.community.mapper.UserMapper;
 import life.james.community.model.User;
 import life.james.community.provider.GithubProvider;
+import life.james.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,8 @@ public class AuthorizeController {
     private  String clientSecret;
     @Autowired
     private UserMapper usermapper;
+    @Autowired
+    private UserService userService;
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name = "state") String state,
@@ -44,7 +47,6 @@ public class AuthorizeController {
         accessTokenDTO.setState(state);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubuser = githubProvider.getUser(accessToken);
-        System.out.println(githubuser.getName());
         if(githubuser!=null){
             //登录成功,存入session中
             request.getSession().setAttribute("user",githubuser);
@@ -53,10 +55,9 @@ public class AuthorizeController {
             user.setToken(token);
             user.setName(githubuser.getName());
             user.setAccountId(String.valueOf(githubuser.getId()));
-            user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModified(user.getGmtCreate());
+
             user.setAvatarUrl(githubuser.getAvatar_url());
-            usermapper.insert(user);
+            userService.CreatOrUpdate(user);
             //如何思考将session和cookies保存到服务器上去
             //存入cookie中
             response.addCookie(new Cookie("token",token));
@@ -65,5 +66,20 @@ public class AuthorizeController {
             //登录失败
             return "redirect:/";
         }
+    }
+
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        //清除session
+        request.getSession().removeAttribute("user");
+        //清除cookie
+        Cookie[] cookies=request.getCookies();
+        for(Cookie cookie: cookies){
+            cookie.setMaxAge(0);
+            cookie.setPath("/");  //路径一定要写上，不然销毁不了
+            response.addCookie(cookie);
+        }
+        return "redirect:/";
     }
 }
