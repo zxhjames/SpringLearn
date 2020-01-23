@@ -3,8 +3,12 @@ package life.james.community.service;
 
 import life.james.community.mapper.UserMapper;
 import life.james.community.model.User;
+import life.james.community.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.UserCredentialsDataSourceAdapter;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -13,19 +17,33 @@ public class UserService {
 
 
     public void CreatOrUpdate(User user) {
-        User dbUser = userMapper.findByAccountId(user.getAccountId());
-        if(dbUser==null){
+        //重构
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andAccountidEqualTo(user.getAccountid());
+        List<User> dbUsers = userMapper.selectByExample(userExample);
+        if(dbUsers.size()==0){
             //插入
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
         }else{
             //更新
-            dbUser.setGmtCreate(System.currentTimeMillis());
-            dbUser.setGmtModified(user.getGmtCreate());
-            dbUser.setName(user.getName());
-            dbUser.setToken(user.getToken());
-            userMapper.update(dbUser);
+            User u = dbUsers.get(0);//抽取查找到第一个
+            u.setGmtCreate(System.currentTimeMillis());
+            u.setGmtModified(user.getGmtCreate());
+            u.setName(user.getName());
+            u.setToken(user.getToken());
+
+            //重构
+            User updateUser = new User();
+            updateUser.setGmtCreate(System.currentTimeMillis());
+            updateUser.setGmtModified(user.getGmtCreate());
+            updateUser.setName(user.getName());
+            updateUser.setToken(user.getToken());
+
+            UserExample example = new UserExample();
+            example.createCriteria().andIdEqualTo(u.getId());
+            userMapper.updateByExampleSelective(updateUser, example);
         }
     }
 }
