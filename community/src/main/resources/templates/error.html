@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!--springboot自定配置错误页面-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>开源社区</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--引入bootstrape样式文件-->
+    <!--注意引入的顺序-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/community.css" type="text/css"/>
+    <script src="/js/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<!--引入标题栏-->
+<div th:insert="~{header :: header}"></div>
+    <div class="row">
+        <div class="jumbotron">
+            <h1 align="center">出错了!!!</h1>
+            <p align="center" th:text="${message}">请稍等......</p>
+            <p align="center"><a class="btn btn-primary btn-lg" href="/" role="button">返回主页</a></p>
+        </div>
+    </div>
+</body>
+</html>

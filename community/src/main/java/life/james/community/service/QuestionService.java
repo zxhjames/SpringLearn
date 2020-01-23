@@ -2,6 +2,9 @@ package life.james.community.service;
 
 import life.james.community.dto.PaginationDTO;
 import life.james.community.dto.QuestionDTO;
+import life.james.community.exception.CustermizeException;
+import life.james.community.exception.CustomizeErrorCode;
+import life.james.community.mapper.QuestionExtMapper;
 import life.james.community.mapper.QuestionMapper;
 import life.james.community.mapper.UserMapper;
 import life.james.community.model.Question;
@@ -23,6 +26,8 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
     //用于主页显示所有问题分页
     public PaginationDTO list(Integer page, Integer size) {
         Integer totalPage;
@@ -109,9 +114,14 @@ public class QuestionService {
 
 
 
-    //用于根据
+    //用于根据问题的id显示详细问题界面
     public QuestionDTO getById(Integer id) {
         Question question = questionMapper.selectByPrimaryKey(id);
+        //错误处理
+        if(question==null){
+            throw new CustermizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
+
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -136,8 +146,31 @@ public class QuestionService {
             updateQuestion.setTag(question.getTag());
             QuestionExample example = new QuestionExample();
             example.createCriteria().andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(updateQuestion,example);//重写update方法
+            int updated = questionMapper.updateByExampleSelective(updateQuestion,example);//重写update方法
+            if(updated!=1){
+                throw new CustermizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
     }
 
+    //统计阅读数
+    public void incView(Integer id) {
+        //但是遇到高并发的时候这gg了
+        /**
+         * 比如说,有四个用户同时访问数据库,这时他们拿出来的viewCount都是1,但是
+         * 在更新viewCount的时候,他们是按照一定的顺序来的,这势必会导致viewCount的数据
+         * 还是保留在2,这显然不行,这时要引入锁的概念
+         */
+//        Question question = questionMapper.selectByPrimaryKey(id);
+//        Question updateQuestion = new Question();
+//        updateQuestion.setViewCount(question.getViewCount()+1);
+//        //更新这个问题
+//        QuestionExample questionExample = new QuestionExample();
+//        questionExample.createCriteria().andIdEqualTo(id);
+
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
+    }
 }
