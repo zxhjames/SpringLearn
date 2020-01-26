@@ -27,7 +27,7 @@ public class PublishController {
 
     //编辑一个问题,重新跳转回publish页面
     @GetMapping("/publish/{id}")
-    public String EditPublish(@PathVariable(name = "id") Integer id
+    public String EditPublish(@PathVariable(name = "id") long id
     , Model model){
         QuestionDTO question=questionService.getById(id);
         model.addAttribute("title", question.getTitle());
@@ -54,7 +54,7 @@ public class PublishController {
             @RequestParam("title") String title,
             @RequestParam("description") String description,
             @RequestParam("tag") String tag,
-            @RequestParam("id") Integer id,
+            @RequestParam("id") Long id,
             HttpServletRequest request,
             Model model) {
         //存放如model中,用于回显到页面上
@@ -83,9 +83,7 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
-
         question.setId(id);//新增加的
-//        questionMapper.create(question);
         questionService.CreateOrUpdate(question);//重新更新或者是创建问题
         return "redirect:/";
 

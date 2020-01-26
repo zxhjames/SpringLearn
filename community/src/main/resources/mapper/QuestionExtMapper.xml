@@ -21,4 +21,11 @@
     set view_count = view_count+#{viewCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
+
+    <!--增加评论数的数目-->
+    <update id="incCommentCount" parameterType="life.james.community.model.Question">
+    update question
+    set comment_count = comment_count+#{commentCount,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
 </mapper>

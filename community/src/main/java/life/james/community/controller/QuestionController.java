@@ -17,7 +17,7 @@ public class QuestionController {
     private QuestionService questionService;
     @GetMapping("/question")
     //先拿到问题的id
-    public String question(@RequestParam(name = "id") Integer id, Model model){
+    public String question(@RequestParam(name = "id") Long id, Model model){
         QuestionDTO questionDTO = questionService.getById(id);
         model.addAttribute("question",questionDTO);//写回页面
         questionService.incView(id);//累加一个问题的浏览数

@@ -7,5 +7,7 @@ import java.util.List;
 
 @Component
 public interface QuestionExtMapper {
-    int incView(Question record);
+    int incView(Question record);//增加浏览数
+    int incCommentCount(Question record);//增加评论数
+
 }

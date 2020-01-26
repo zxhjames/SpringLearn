@@ -1,8 +1,8 @@
 package life.james.community.exception;
 
 public class CustermizeException  extends RuntimeException{
-    public String message;
-
+    private String message;
+    private Integer code;
     public CustermizeException(ICustomizeErrorCode errorCode){
         this.message = errorCode.getMessage();
     }
@@ -14,5 +14,9 @@ public class CustermizeException  extends RuntimeException{
     @Override
     public String getMessage() {
         return message;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 }

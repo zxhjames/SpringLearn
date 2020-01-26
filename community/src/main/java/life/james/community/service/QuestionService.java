@@ -70,7 +70,7 @@ public class QuestionService {
 
 
     //用于分页显示我的所有问题
-    public PaginationDTO listByUserId(Integer userid, Integer page, Integer size) {
+    public PaginationDTO listByUserId(Long userid, Integer page, Integer size) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
         QuestionExample questionExample = new QuestionExample();
@@ -115,7 +115,7 @@ public class QuestionService {
 
 
     //用于根据问题的id显示详细问题界面
-    public QuestionDTO getById(Integer id) {
+    public QuestionDTO getById(Long id) {
         Question question = questionMapper.selectByPrimaryKey(id);
         //错误处理
         if(question==null){
@@ -134,11 +134,13 @@ public class QuestionService {
             //创建
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
+            question.setViewCount(0);
+            question.setLikeCount(0);
+            question.setCommentCount(0);
             questionMapper.insert(question);//重写create方法
         }else{
             //更新
             question.setGmtModified(System.currentTimeMillis());
-
             Question updateQuestion = new Question();
             updateQuestion.setGmtModified(System.currentTimeMillis());
             updateQuestion.setTitle(question.getTitle());
@@ -154,7 +156,7 @@ public class QuestionService {
     }
 
     //统计阅读数
-    public void incView(Integer id) {
+    public void incView(Long id) {
         //但是遇到高并发的时候这gg了
         /**
          * 比如说,有四个用户同时访问数据库,这时他们拿出来的viewCount都是1,但是

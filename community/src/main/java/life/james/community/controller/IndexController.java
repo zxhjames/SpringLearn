@@ -20,7 +20,7 @@ public class IndexController {
     //显示主页
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(name="page",defaultValue = "1") Integer page,
-                        @RequestParam(name="size",defaultValue = "5") Integer size)
+                        @RequestParam(name="size",defaultValue = "4") Integer size)
     {
         //拿到服务器的cookie,先去cookie中寻找token,再拿得到的token与数据库中的token做比较
         //如果有那么就存入session,没有则跳转到登录页面
