@@ -5,16 +5,19 @@ import life.james.community.mapper.UserMapper;
 import life.james.community.model.User;
 import life.james.community.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.UserCredentialsDataSourceAdapter;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
+@Component
 @Service
 public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    HttpServletRequest request;
 
     public void CreatOrUpdate(User user) {
         //重构
@@ -25,6 +28,7 @@ public class UserService {
             //插入
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+//            request.getSession().setAttribute("user",user);
             userMapper.insert(user);
         }else{
             //更新

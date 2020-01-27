@@ -21,6 +21,8 @@ public class QuestionController {
         QuestionDTO questionDTO = questionService.getById(id);
         model.addAttribute("question",questionDTO);//写回页面
         questionService.incView(id);//累加一个问题的浏览数
+        //同时显示这个评论的详细内容
+
         return "question";
     }
 }

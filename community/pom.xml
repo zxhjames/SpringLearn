@@ -15,10 +15,6 @@
     <name>community</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -121,8 +117,28 @@
             <artifactId>pagehelper</artifactId>
             <version>5.1.2</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+            <version>1.9.22</version>
+        </dependency>
+
+        <!--Redis依赖-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-redis</artifactId>-->
+<!--            <version>1.4.7.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.session</groupId>-->
+<!--            <artifactId>spring-session-data-redis</artifactId>-->
+<!--            &lt;!&ndash;<version>2.0.6</version>&ndash;&gt;-->
+<!--        </dependency>-->
+
+
+
+    </dependencies>
     <build>
         <defaultGoal>compile</defaultGoal>
         <plugins>
@@ -188,6 +204,33 @@
                 </dependencies>
             </plugin>
 
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- Docker maven plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <!-- docker私服的地址 -->
+                    <!--镜像名称以及版本号-->
+                    <imageName>spring-boot-docker:1.1.1</imageName>
+                    <!--依赖的基础镜像-->
+                    <baseImage>java</baseImage>
+                    <!--Dockerfile的位置 -->
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

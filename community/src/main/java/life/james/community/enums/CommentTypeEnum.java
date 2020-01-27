@@ -1,7 +1,4 @@
 package life.james.community.enums;
-
-import life.james.community.model.Comment;
-
 public enum CommentTypeEnum {
     QUESTION(1L),
     COMMENT(2L);

@@ -8,6 +8,7 @@ import life.james.community.provider.GithubProvider;
 import life.james.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,15 +48,13 @@ public class AuthorizeController {
         accessTokenDTO.setState(state);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubuser = githubProvider.getUser(accessToken);
-        if(githubuser!=null){
+        if(githubuser!=null && githubuser.getId()!=0){
             //登录成功,存入session中
-            request.getSession().setAttribute("user",githubuser);
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setName(githubuser.getName());
             user.setAccountid(String.valueOf(githubuser.getId()));
-
             user.setAvatarUrl(githubuser.getAvatar_url());
             userService.CreatOrUpdate(user);
             //如何思考将session和cookies保存到服务器上去

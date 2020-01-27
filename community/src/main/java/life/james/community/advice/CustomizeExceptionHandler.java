@@ -1,41 +1,46 @@
 package life.james.community.advice;
+import com.alibaba.fastjson.JSON;
 import life.james.community.dto.ResultDTO;
 import life.james.community.exception.CustermizeException;
 import life.james.community.exception.CustomizeErrorCode;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 //用于处理错误跳转
 @ControllerAdvice
+@Slf4j
 public class CustomizeExceptionHandler {
     @ExceptionHandler(Exception.class)
     Object handle(Throwable e, Model model, HttpServletRequest request,
                   HttpServletResponse response) {
         //有错就直接返回到error页面
         String contentType = request.getContentType();
-        if("application/json".equals(contentType)){
-            //返回json
+        if ("application/json".equals(contentType)) {
             ResultDTO resultDTO;
+            // 返回 JSON
             if (e instanceof CustermizeException) {
-               return ResultDTO.errorOf((CustermizeException) e);
+                resultDTO = ResultDTO.errorOf((CustermizeException) e);
             } else {
-                return ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
+                log.error("handle error", e);
+                resultDTO = ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
             }
-//            try{
-//                response.setContentType("application/json");
-//                response.setStatus(200);
-//                response.setCharacterEncoding("utf-8");
-//                PrintWriter writer = response.getWriter();
-//                writer.write(JSON.toJSONString(resultDTO));
-//                writer.close();
-//            }catch(IOException ioe){
-//
-//            }
-//            return null;
+            try {
+                response.setContentType("application/json");
+                response.setStatus(200);
+                response.setCharacterEncoding("utf-8");
+                PrintWriter writer = response.getWriter();
+                writer.write(JSON.toJSONString(resultDTO));
+                writer.close();
+            } catch (IOException ioe) {
+            }
+            return null;
         }else{
             //错误页面跳转
             if (e instanceof CustermizeException) {
