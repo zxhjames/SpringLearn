@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
+import java.util.Collections;
 
 //允许这个类去接受前端的一个请求
 @Controller
@@ -27,6 +29,7 @@ public class IndexController {
 
 
         PaginationDTO pagination = questionService.list(page,size);
+//        Collections.reverse(pagination.getQuestions());
         model.addAttribute("pagination",pagination);
         return "index";//去template找
     }

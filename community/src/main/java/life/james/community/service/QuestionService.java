@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -45,10 +47,11 @@ public class QuestionService {
         }
         Integer offset = size * (page - 1);
         //重构实现分页,按照偏移量查询
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(new QuestionExample(),
+        List<Question> questions = questionExtMapper.selectByExampleByDateWithRowbounds(new QuestionExample(),
                 new RowBounds(offset,size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         PaginationDTO paginationDTO = new PaginationDTO();
+//        Collections.reverse(questions);
         for (Question question : questions) {
 
             //重构:根据id查找findById
@@ -62,7 +65,6 @@ public class QuestionService {
         }
 
         paginationDTO.setQuestions(questionDTOList);
-
         paginationDTO.setPagination(totalCount, page, size);
         return paginationDTO;
     }

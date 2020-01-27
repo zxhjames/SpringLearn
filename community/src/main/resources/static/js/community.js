@@ -13,8 +13,9 @@ function post() {
         }),
         success:function (response){
             if(response.code==200){
-                // $("#comment_content").hide();
-                //回复完成后,重新跳转回/question?id页面
+                //如果成功的话,就重新加载页面,然后清除输入框
+                location.reload();
+                $("#comment_content").val("");
             }else{
                 alert(response.message);
             }

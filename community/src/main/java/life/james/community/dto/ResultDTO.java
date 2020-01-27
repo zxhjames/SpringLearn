@@ -24,8 +24,8 @@ public class ResultDTO {
     public static ResultDTO errorOf(CustermizeException e) {
         return errorOf(e.getCode(),e.getMessage());
     }
-    //请求成功状态码
 
+    //请求成功状态码
     public static ResultDTO okOf(){
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(200);

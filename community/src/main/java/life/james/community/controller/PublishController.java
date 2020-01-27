@@ -25,7 +25,14 @@ public class PublishController {
     @Autowired
     private QuestionService questionService;
 
-    //编辑一个问题,重新跳转回publish页面
+
+    //新发布一个问题
+    @GetMapping("/publish")
+    public String publish() {
+        return "publish";
+    }
+
+    //跳转到问题的详细页面
     @GetMapping("/publish/{id}")
     public String EditPublish(@PathVariable(name = "id") long id
     , Model model){
@@ -39,15 +46,9 @@ public class PublishController {
 
 
 
-    @GetMapping("/publish")
-    public String publish() {
-        return "publish";
-    }
 
 
-
-
-    //接受参数,发布一个新的问题
+    //接受参数,发布一个新的问题,发布成功后跳转到根页面
     @PostMapping("/publish")
     public String doPublish(
             //传入publish页面发送过来的值
