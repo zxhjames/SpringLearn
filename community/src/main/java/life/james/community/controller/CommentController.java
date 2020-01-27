@@ -1,6 +1,6 @@
 package life.james.community.controller;
 
-import life.james.community.dto.CommentDTO;
+import life.james.community.dto.CommentCreateDTO;
 import life.james.community.dto.ResultDTO;
 import life.james.community.model.Comment;
 import life.james.community.service.CommentService;
@@ -19,7 +19,7 @@ public class CommentController {
     @RequestMapping(value = "/comment",method = RequestMethod.POST)
     //使用json来传递评论的信息
     //直接使用requestParam要传递太多参数，不方便,用一个对象来传递
-    public Object post(@RequestBody CommentDTO commentDTO
+    public Object post(@RequestBody CommentCreateDTO commentCreateDTO
     , HttpServletRequest request) {
         //使用flyway时出问题可以先mvn install 一下！
 //        System.out.println(commentDTO.getParentId()+" "+commentDTO.getContent()+" "+commentDTO.getType());
@@ -30,9 +30,9 @@ public class CommentController {
 //            return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
 //        }ffsd
         Comment comment = new Comment();
-        comment.setParentId(commentDTO.getParentId());
-        comment.setContent(String.valueOf(commentDTO.getContent()));
-        comment.setType(commentDTO.getType());
+        comment.setParentId(commentCreateDTO.getParentId());
+        comment.setContent(String.valueOf(commentCreateDTO.getContent()));
+        comment.setType(commentCreateDTO.getType());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtCreate(comment.getGmtCreate());
         comment.setGmtModified(comment.getGmtCreate());

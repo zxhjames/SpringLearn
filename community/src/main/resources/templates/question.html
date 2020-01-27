@@ -44,10 +44,11 @@
                     <div class="media-body">
                         <p><span th:text="${question.user.name}" class="text-desc"></span></p>
                         <div>我是回复内容</div>
-                        <div>
-                            <h5><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-comment" aria-hidden="true">评论()</span>
-                            <div align="right" class="text-desc"><span th:text="${#dates.format(question.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span></div></h5>
+                        <div class="menu">
+                            <span class="glyphicon glyphicon-thumbs-up icon" aria-hidden="true">点赞()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-comment icon" aria-hidden="true">评论()</span>
+                            <div align="right" class="text-desc"><span
+                                    th:text="${#dates.format(question.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span></div>
                         </div>
                     </div>
                 </div>

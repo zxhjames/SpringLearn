@@ -48,7 +48,7 @@ public class PublishController {
 
 
 
-    //接受参数,发布一个新的问题,发布成功后跳转到根页面
+    //接受参数,发布一个新的问题,发布成功后跳转到根页面,根页面会显示最新的内容
     @PostMapping("/publish")
     public String doPublish(
             //传入publish页面发送过来的值
