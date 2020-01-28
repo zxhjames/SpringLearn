@@ -30,6 +30,7 @@ public class QuestionController {
 
         //同时显示这个评论的详细内容
         List<CommentDTO> comments = commentService.listByQuestionId(id);
+        model.addAttribute("comments",comments);
         return "question";
     }
 }

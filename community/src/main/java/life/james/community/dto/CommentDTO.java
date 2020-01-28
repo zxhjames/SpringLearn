@@ -5,6 +5,9 @@ import lombok.Data;
 
 @Data
 public class CommentDTO {
+    //添加一个user
+    private String content;
+    private User user;
     private Long id;
     private Long parentId;
     private Long type;
@@ -12,7 +15,4 @@ public class CommentDTO {
     private Long gmtCreate;
     private Long gmtModified;
     private Long likeCount;
-    private String content;
-    //添加一个user
-    private User user;
 }

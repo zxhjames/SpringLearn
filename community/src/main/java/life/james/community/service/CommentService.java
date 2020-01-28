@@ -66,16 +66,18 @@ public class CommentService {
     }
 
     public List<CommentDTO> listByQuestionId(Long id) {
-        //去数据库查找
+        //根据id去数据库查找
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria()
-                .andCommentatorEqualTo(id)
+                .andParentIdEqualTo(id)
                 .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
         List<Comment> comments = commentMapper.selectByExample(commentExample);
+        //如果查到的评论为空,直接返回
         if (comments.size() == 0) return new ArrayList<>();
         //取出所有的评论者,同时过滤掉回答了相同问题的评论者
         Set<Long> commentators  = comments.stream().map(comment -> comment.getCommentator()).collect(Collectors.toSet());
 
+        //转换成list类型
         List<Long> userIds = new ArrayList<>();
         userIds.addAll(commentators);
 
