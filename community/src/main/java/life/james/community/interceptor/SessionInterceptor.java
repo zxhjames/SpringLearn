@@ -4,6 +4,8 @@ import life.james.community.mapper.UserMapper;
 import life.james.community.model.User;
 import life.james.community.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,6 +17,7 @@ import java.util.List;
 
 //加上service使spring接管注解
 @Service
+@Component
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
@@ -31,10 +34,8 @@ public class SessionInterceptor implements HandlerInterceptor {
                     userExample.createCriteria().andTokenEqualTo(token);
                     List<User> users = userMapper.selectByExample(userExample);
                     if (users.size() != 0) {
-                        request.getSession(true).setAttribute("user", users.get(0));
-                        Long uid = users.get(0).getId();
-                        Cookie c = new Cookie("uid",String.valueOf(uid));
-                        response.addCookie(c);
+                        request.getSession().setAttribute("user", users.get(0));
+//                        System.out.println("session"+users.get(0).getId());
                     }
                     break;
                 }
